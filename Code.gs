@@ -20,6 +20,12 @@ function DRIVEDIST(origin, destination, unit) {
     case "mi":
       distance = distance/1609.34;
       return Number (distance.toFixed(2));
+    case "ft":
+      distance = distance*3.28084;
+      return Number (distance.toFixed(2));
+    case "nm":
+      distance = distance/1852;
+      return Number (distance.toFixed(2));
   }
 }
 
@@ -52,5 +58,9 @@ function GEODIST(origin, destination, unit) {
       return parseInt(6371230 * c);
     case "mi":
       return parseInt((6371230/1609.34) * c);
+    case "ft":
+      return parseInt(6371230*3.28084 * c);
+    case "nm":
+      return parseInt((6371230/1852) * c);
   }
 }
